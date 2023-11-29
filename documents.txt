@@ -1,0 +1,4 @@
+
+API Key Web url: https://pro.coinmarketcap.com/account/
+API Key: eed2570b-4839-4258-98b5-f65a2c82a8f5
+API URL: https://jsonplaceholder.typicode.com/users/

@@ -1,0 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.navbar {
+    border-bottom: 2px solid #ed7413;
+}
+
+.navbar-nav>li>a {
+    color: black;
+    font-size: 19px;
+}
+
+.navbar {
+    border-radius: 0;
+    background-image: linear-gradient(45deg, white, white, #f5ab1b);
+}
+
+.banner>img {
+    height: 88vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+.banner:before {
+        content: "";
+        background-image: linear-gradient(#6c9283,
+            rgba(56, 56, 56, 0.336));
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+}
