@@ -9,6 +9,8 @@ body {
 
 .navbar {
     border-bottom: 2px solid #ed7413;
+    z-index: 1;
+    margin-bottom: 0;
 }
 
 .navbar-nav>li>a {
@@ -22,7 +24,6 @@ body {
 }
 
 .banner>img {
-    height: 88vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,12 +32,12 @@ body {
 
 .banner:before {
         content: "";
-        background-image: linear-gradient(#6c9283,
-            rgba(56, 56, 56, 0.336));
+        background-image: linear-gradient(#b9b9b95e,
+        rgba(56, 56, 56, 0.336));
         height: 100%;
         width: 100%;
         position: absolute;
-        top: 0;
+        top: 50;
         left: 0;
         right: 0;
 }
