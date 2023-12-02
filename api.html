@@ -8,13 +8,27 @@
 </head>
 
 <body>
-    <button onclick="" id="homePage" type="button">Home</button>
-    <h2>API Dashboard</h2>
+    <button target="_blank" onclick="homePage()">Home</button>
+    <h2>API Page........!</h2>
 </body>
 <script>
-    document.getElementById("homePage").addEventListener('click', function () {
-        window.location.href = "/index.html"
-    })
+    const apiUrl = "https://jsonplaceholder.typicode.com/users/"
+
+    const fetchData = () =>{
+        const response = axios.get(apiUrl).then(((response) => {
+           return response.json();
+           
+        }).catch((err) => {
+            console.log(err, "Data fetch error...!")
+        })
+    }
+    function homePage() {
+        return window.location = "/index.html"
+        // document.getElementById("homePage").addEventListener('click', function () {
+        //     return window.location.href = "/index.html"
+        // })
+    }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 </html>

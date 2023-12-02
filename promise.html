@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h2>Hello world..!!</h2>
+</body>
+<script>
+  // Task name:
+  // 1: 2s roll number 
+  // 2: 2s name & age 
+  const obj1 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      let rollNumber = [1, 2, 3, 4, 5];
+      resolve(rollNumber);
+      reject("Error while communicating");
+    }, 2000);
+  });
+
+  // Promises has two method
+  // 1> then()
+  // 1> catch()
+
+  const getBioData = () => {
+    return new Promise((resolve, reject) => {
+      setTimeout((indexData) => {
+        let bioData = {
+          name: "Kuldeep",
+          age: 27,
+        }
+      })
+      resolve(`My roll number is ${indexData} & name is ${bioData.name} & i'm ${bioData.age} year old. `);
+    }, 2000, indexData)
+  }
+
+
+  obj1
+    .then((rollNumber) => {
+      console.log(rollNumber);
+    })
+    .catch((error) => {
+      console.log(error, "Communication error.!");
+    });
+
+</script>
+
+</html>
