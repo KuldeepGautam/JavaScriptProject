@@ -11,12 +11,12 @@
   <h2>Hello world..!!</h2>
   <script>
     // Task name:
-    // 1: 2s roll number 
-    // 2: 2s name & age 
+    // 1: after 2s roll number 
+    // 2: After roll number 2s name & age 
     const obj1 = new Promise((resolve, reject) => {
       setTimeout(() => {
-        let rollNumber = [1, 2, 3, 4, 5];
-        resolve(rollNumber);
+        let rollNo = [1, 2, 3, 4, 5];
+        resolve(rollNo);
         // reject("Error while communicating");
       }, 2000);
     });
@@ -25,29 +25,47 @@
     // 1> then()
     // 1> catch()
 
-      const getBioData = (indexData) => {
-        return new Promise((resolve, reject) => {
-          setTimeout((indexData) => {
-            let bioData = {
-              name: "Kuldeep",
-              age: 27,
-            }
-            resolve(`My roll number is ${indexData} & name is ${bioData.name} & i'm ${bioData.age} year old. `);
+    const getBioData = (indexData) => {
+      return new Promise((resolve, reject) => {
+        setTimeout((indexData) => {
+          let bioData = {
+            name: "Kuldeep",
+            age: 27,
           }
-          )
-        }, 2000, indexData)
-      }
+          resolve(`My name is ${bioData.name} & age ${bioData.age}  `);
+        }
+        )
+      }, 2000, indexData)
+    }
 
-    obj1
-      .then((rollNumber) => {
-        console.log(rollNumber);
-        return getBioData(rollNumber[2])
-      }).then((data) => {
-        console.log(data)
+    // obj1
+    //   .then((rollNumber) => {
+    //     console.log(rollNumber);
+    //     return getBioData(rollNumber[2])
+    //   }).then((data) => {
+    //     console.log(data)
+    //   })
+    //   .catch((error) => {
+    //     console.log(error, "Communication error.!");
+    //   });
+
+    async function getData() {
+      const rollNumberData =  await obj1;
+      console.log(rollNumberData);
+
+      const bioDataDetails = await getBioData(rollNumberData[3])
+      console.log(bioDataDetails);
+      return bioDataDetails;
+    }
+    
+    
+    // const dataName =  getData().then((userName)=>{
+      const bioDataDetails = await getBioData.then((userName)=>{
+        console.log(userName);
+
       })
-      .catch((error) => {
-        console.log(error, "Communication error.!");
-      });
+
+    
 
   </script>
 </body>

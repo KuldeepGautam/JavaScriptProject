@@ -10,24 +10,39 @@
 <body>
     <button target="_blank" onclick="homePage()">Home</button>
     <h2>API Page........!</h2>
-</body>
+    <!-- Data Render -->
 <script>
     const apiUrl = "https://jsonplaceholder.typicode.com/users/"
 
-    const fetchData = () =>{
-        const response = axios.get(apiUrl).then(((response) => {
-           return response.json();
-           
-        }).catch((err) => {
+    // fetch is a method provided by API 
+    fetch (apiUrl).then((response) => {
+        return response.json();
+        console.log(data)
+        }).then((data)=>{
+            // const userName = data(`My name is ${data.id}`)
+            console.log(data[(`user name ${name}`)])
+        }).catch((err) =>{
             console.log(err, "Data fetch error...!")
         })
-    }
+
+
+    // async function fetchData (){
+    //     const response = await axios.get(apiUrl).then((response) => {
+    //     return data = response.json();
+    //     console.log(data)
+    //     return response.json();
+    //     }).catch((err) => {
+    //         console.log(err, "Data fetch error...!")
+    //     })
+    // }
+
     function homePage() {
         return window.location = "/index.html"
         // document.getElementById("homePage").addEventListener('click', function () {
         //     return window.location.href = "/index.html"
         // })
     }
+
 </script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
