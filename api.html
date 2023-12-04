@@ -9,9 +9,10 @@
 
 <body>
     <button target="_blank" onclick="homePage()">Home</button>
-    <h2>API Page........!</h2>
+    <h2 id="ApiData"></h2>
     <!-- Data Render -->
 <script>
+
     const apiUrl = "https://jsonplaceholder.typicode.com/users/"
 
     // fetch is a method provided by API 
@@ -19,8 +20,9 @@
         return response.json();
         console.log(data)
         }).then((data)=>{
-            // const userName = data(`My name is ${data.id}`)
-            console.log(data[(`user name ${name}`)])
+            const userName = data[0].name;
+            document.getElementById("ApiData").innerHTML = userName;
+            console.log(data[0].name)
         }).catch((err) =>{
             console.log(err, "Data fetch error...!")
         })
