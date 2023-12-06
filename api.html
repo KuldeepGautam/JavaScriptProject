@@ -9,7 +9,6 @@
 
 <body>
     <button target="_blank" onclick="homePage()">Home</button>
-<<<<<<< HEAD
     <h2 id="ApiData"></h2>
     <table>
         <thead>
@@ -23,16 +22,12 @@
             
         </tbody>
     </table>
-=======
-    <h2>Name: <span id="ApiData"></span></h2>
->>>>>>> ac2f7d7cc2c7db3cd23c5b574d3be090fa5f3861
     <!-- Data Render -->
 <script>
 
     const apiUrl = "https://jsonplaceholder.typicode.com/users/"
 
     // fetch is a method provided by API 
-<<<<<<< HEAD
     fetch (apiUrl).then(response =>response.json())
         .then((data)=>{
             console.log(data)
@@ -46,17 +41,6 @@
           ).json('');
         }).catch((error)=>{
             console.log("Error found..!!", error)
-=======
-    fetch (apiUrl).then((response) => {
-        return response.json();
-        console.log(data)
-        }).then((data)=>{
-            const userName = data[2].name;
-            document.getElementById("ApiData").innerHTML = userName;
-            console.log(data[0].name)
-        }).catch((err) =>{
-            console.log(err, "Data fetch error...!")
->>>>>>> ac2f7d7cc2c7db3cd23c5b574d3be090fa5f3861
         })
 
 
