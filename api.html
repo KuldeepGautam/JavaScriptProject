@@ -9,7 +9,7 @@
 
 <body>
     <button target="_blank" onclick="homePage()">Home</button>
-    <h2 id="ApiData"></h2>
+    <h2>Name: <span id="ApiData"></span></h2>
     <!-- Data Render -->
 <script>
 
@@ -20,7 +20,7 @@
         return response.json();
         console.log(data)
         }).then((data)=>{
-            const userName = data[0].name;
+            const userName = data[2].name;
             document.getElementById("ApiData").innerHTML = userName;
             console.log(data[0].name)
         }).catch((err) =>{
