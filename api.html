@@ -10,21 +10,37 @@
 <body>
     <button target="_blank" onclick="homePage()">Home</button>
     <h2 id="ApiData"></h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Mobile Number</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            
+        </tbody>
+    </table>
     <!-- Data Render -->
 <script>
 
     const apiUrl = "https://jsonplaceholder.typicode.com/users/"
 
     // fetch is a method provided by API 
-    fetch (apiUrl).then((response) => {
-        return response.json();
-        console.log(data)
-        }).then((data)=>{
-            const userName = data[0].name;
-            document.getElementById("ApiData").innerHTML = userName;
-            console.log(data[0].name)
-        }).catch((err) =>{
-            console.log(err, "Data fetch error...!")
+    fetch (apiUrl).then(response =>response.json())
+        .then((data)=>{
+            console.log(data)
+          const tableBody = document.getElementById("ApiData");
+          tableBody.innerHTML = data.map(item=>
+            `<tr ke={item}>
+                <td>${data.name}</td>
+                <td></td>
+                <td></td>
+            </tr>`
+          ).json('');
+        }).catch((error)=>{
+            console.log("Error found..!!", error)
         })
 
 
