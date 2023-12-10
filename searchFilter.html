@@ -14,36 +14,33 @@
     <div class="container">
         <br>
         <h3>Search data!</h3>
-        <input type="text" id="" onchange="" placeholder="Search name/mobile/address">
-        <table class="table table-hover">
-            <thead>
+        <input 
+        type="text"
+        id="myInput"
+        onkeyup="searchFunction()"
+        placeholder="Search name/mobile/address"
+        >
+        <table id="tableId" class="table table-hover">
                 <tr>
-                    <th>Id</th>
                     <th>Name</th>
                     <th>Mobile</th>
                     <th>Address</th>
                 </tr>
-            </thead>
-            <tbody>
                 <tr>
-                    <td>1</td>
                     <td>Kuldeep Gautam</td>
                     <td>9411988367</td>
                     <td>Delhi</td>
                 </tr>
                 <tr>
-                    <td>2</td>
                     <td>Roshan Kumar</td>
                     <td>9811988367</td>
                     <td>Uttar Pradesh</td>
                 </tr>
                 <tr>
-                    <td>3</td>
                     <td>Aman Sonare</td>
                     <td>9111988367</td>
                     <td>Noida</td>
                 </tr>
-            </tbody>
         </table>
         <div>
             <p id="arrayData"></p>
@@ -51,14 +48,24 @@
         </div>
     </div>
     <script>
-        const array = ['1',2,'1','3',4,'str',6,'str2'];
-        document.getElementById("arrayData").innerHTML = array;
+        const searchFunction = () =>{
+            let filter = document.getElementById("myInput").value.toUpperCase();
+            let tableId = document.getElementById("tableId");
+            let tr = document.getElementsByTagName('tr');
 
-        const integer = array.Number(array);
+            for(var i = 0; i<tr.length; i++){
+                let td = tr[i].getElementsByTagName('td')[0];
 
-        document.getElementById("integerId").innerHTML = integer;
-        const data = array.indexOf(("str"))
-        document.getElementById("arrayIndex").innerHTML = data;
+                if(td){
+                    let contextValue = td.textContent || td.innerHTML;
+                    if(contextValue.toLocaleUpperCase().indexOf(filter)>-1){
+                       tr[1].style.display= ''; 
+                    }else{
+                        tr[i].style.display = 'none';
+                    }
+                }
+            }    
+        }
     </script>
 </body>
 
