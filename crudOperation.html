@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Crud Operation!</h2>
+    <!-- creating new user -->
+    <form id="createForm" action="">
+        <label for="itemName">Name</label>
+        <input type="text" id="itemName" required>
+        <button type="button" onclick="createItem()">Create</button>
+    </form>
+    <!-- Displaying Existing Record -->
+    <h2>Existing Record:</h2>
+    <ul id="itemList"></ul>
+</body>
+<script>
+    // Function to get items from local storage.
+    function getItemFromLocalStorage() {
+        const storedItem = localStorage.getItem('item');
+        return storedItem ? JSON.parse(storedItem) : [];
+    }
+
+    // Function to save items from local storage
+    function saveItemToLocalStorage() {
+        localStorage.setItem('items', JSON.stringify(items));
+    }
+     
+    let items = getItemFromLocalStorage();
+    
+
+</script>
+
+</html>
