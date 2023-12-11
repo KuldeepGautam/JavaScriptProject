@@ -53,11 +53,9 @@ const searchFunction = () =>{
             }    
         }
 
-
-    const apiUrl = "https://jsonplaceholder.typicode.com/users/"
-
-    // fetch is a method provided by API 
-    // fetch (apiUrl).then(response =>response.json())
+        
+        // fetch is a method provided by API 
+        // fetch (apiUrl).then(response =>response.json())
     //     .then((data)=>{
     //         console.log(data)
     //       const tableBody = document.getElementById("ApiData");
@@ -73,9 +71,10 @@ const searchFunction = () =>{
     //     })
 
 
+    const apiUrl = "https://jsonplaceholder.typicode.com/users/"
     document.addEventListener("DOMContentLoaded", function () {
     // Fetch data from the URL
-    fetch("https://jsonplaceholder.typicode.com/users/")
+    fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
             // Map data to table rows
