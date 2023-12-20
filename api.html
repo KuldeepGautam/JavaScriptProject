@@ -33,7 +33,7 @@
     <!-- Data Render -->
 <script>
 
-
+// Search items function
 const searchFunction = () =>{
             let filter = document.getElementById("myInput").value.toUpperCase();
             let tableId = document.getElementById("tableId");
@@ -53,9 +53,9 @@ const searchFunction = () =>{
             }    
         }
 
-        
-        // fetch is a method provided by API 
-        // fetch (apiUrl).then(response =>response.json())
+    // =====// Old Version fetch data //===    
+    // fetch is a method provided by API 
+    // fetch (apiUrl).then(response =>response.json())
     //     .then((data)=>{
     //         console.log(data)
     //       const tableBody = document.getElementById("ApiData");
