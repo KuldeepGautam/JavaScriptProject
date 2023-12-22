@@ -28,15 +28,16 @@
 </body>
 
 <script>
-    
+
     const apiUrl = "https://jsonplaceholder.typicode.com/posts";
-    
+
     async function fetchApiData() {
         const response = await fetch(apiUrl);
         const data = await response.json();
         console.log(data);
         // Filter posts with userId equal to 5
-        // const filteredData = data.filter(post => post.userId === 5);
+        const filteredData = data.filter(post => post.userId === 5);
+        console.log(filteredData);
         const tableBody = document.getElementById("tableBody");
 
         // fetch data in the table
