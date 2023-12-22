@@ -19,16 +19,14 @@
         width: 100%;
     }
 
-    .form-group {
-        display: flex;
-    }
+
 
     .age-calculator>div {
         width: 30%;
         padding: 30px;
         border-radius: 10px;
-        border: 5px solid #25b227;
-        height: 70vh;
+        border: 5px solid #667b66;
+        height: 50vh;
         background-image: linear-gradient(0deg, #cecece, #6c659c7a, #8fa88c);
     }
 </style>
@@ -37,25 +35,38 @@
     <div class="container">
         <div class="age-calculator">
             <div>
-                <h2 class="text-center">Age <span>Calculator</span></h2>
+                <h2 class="text-center"
+                    style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Age
+                    <span>Calculator</span>
+                </h2>
                 <div class="form-group">
-                    <label for="pwd"></label>&ensp;
-                    <input type="date" class="form-control" id="birthDate">&nbsp; <button class="btn btn-success"
-                        onclick="handleApply()">Apply</button>
+                    <label for="pwd">Select Birth Date:</label>
+                    <input type="date" class="form-control" id="birthDate" required>
+                    <br>
+                    <button id="calculateBtn" class="btn btn-success " onclick="ageCalculator()">Apply</button>
                 </div>
-                <h2 id="result"></h2>
+                <h2>Result: <span id="result"></span></h2>
             </div>
         </div>
     </div>
 </body>
 <script>
-    const birthDate   = new Date(document.getElementById('birthDate').value);
-    const currentDate = new Date();
-    const resultElement = document.getElementById('result');
-     
-    const age =  currentDate.getFullYear() - birthDate.getFullYear();
-    console.log(age);
 
+    function ageCalculator() {
+        const birthDate = new Date(document.getElementById('birthDate').value);
+        const currentDate = new Date();
+        console.log(currentDate);
 
+        // Age different 
+        const ageDifference = currentDate.getFullYear() - birthDate.getFullYear();
+        console.log(ageDifference);
+
+        if (currentDate.getMonth() < birthDate.getDate() || currentDate.getMonth() === birthDate.getDate()
+            && currentDate.getDate() < birthDate.getDate()) {
+            ageDifference;
+        }
+        document.getElementById('result').innerHTML = "Your age is " + ageDifference + "year olds.";
+    }
 </script>
+
 </html>
