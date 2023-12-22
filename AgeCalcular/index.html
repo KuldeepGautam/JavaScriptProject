@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<style>
+    .age-calculator {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+    }
+
+    .form-group {
+        display: flex;
+    }
+
+    .age-calculator>div {
+        width: 30%;
+        padding: 30px;
+        border-radius: 10px;
+        border: 5px solid #25b227;
+        height: 70vh;
+        background-image: linear-gradient(0deg, #cecece, #6c659c7a, #8fa88c);
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="age-calculator">
+            <div>
+                <h2 class="text-center">Age <span>Calculator</span></h2>
+                <div class="form-group">
+                    <label for="pwd"></label>&ensp;
+                    <input type="date" class="form-control" id="birthDate">&nbsp; <button class="btn btn-success"
+                        onclick="handleApply()">Apply</button>
+                </div>
+                <h2 id="result"></h2>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const birthDate   = new Date(document.getElementById('birthDate').value);
+    const currentDate = new Date();
+    const resultElement = document.getElementById('result');
+     
+    const age =  currentDate.getFullYear() - birthDate.getFullYear();
+    console.log(age);
+
+
+</script>
+</html>
