@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Call Back Functions:</h2><span>A callBack is a function that is passes as argument to the another
+        function and is executed after another function execution has been finished.</span>
+    <ul id="arrayId"></ul>
+    <h2>Given a string, reverse each word in the given paragraph?</h2>
+    <script>
+
+        // CallBack function
+        function modifyArray(arr, callBack) {
+            const modifyNumber =  arr.push(100);
+            document.getElementById("arrayId").innerHTML = modifyNumber
+            callBack();
+        }
+
+        var arr = [1, 2, 3, 4, 5]
+
+         modifyArray(arr, function () {
+            console.log("Array has been modify", arr)
+            
+            return arr;
+        })
+        
+        // Reverse the given string with paragraph
+        var string = "Welcome to the JavaScript Code";
+        var reverseEntireSentence = reverseBySeparator(string, "")
+        console.log(reverseEntireSentence);
+
+    </script>
+</body>
+
+</html>
