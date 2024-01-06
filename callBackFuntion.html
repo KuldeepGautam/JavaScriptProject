@@ -12,7 +12,9 @@
         function and is executed after another function execution has been finished.</span>
     <ul id="arrayId"></ul>
     <h2>Given a string, reverse each word in the given paragraph?</h2>
-    <h2 id="reverseId"></h2>
+    <h2 >Result: <span id="reverseId"></span></h2>
+    <h2>Even Number: <span id="evenId"></span></h2>
+    <h2>Odd Number: <span id="oddId"></span></h2>
     <script>
 
         // CallBack function
@@ -39,7 +41,9 @@
         var allNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
         console.log("All number: ", allNumber);
         var filterNumberEven = allNumber.filter(num => num % 2 === 0);
+        document.getElementById("evenId").innerHTML = filterNumberEven;
         var filterNumberOdd = allNumber.filter(num => num % 2 !== 0);
+        document.getElementById("oddId").innerHTML = filterNumberOdd
         console.log("even: ", filterNumberEven);
         console.log("odd: ", filterNumberOdd);
     </script>
