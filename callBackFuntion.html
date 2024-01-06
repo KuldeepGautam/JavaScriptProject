@@ -12,28 +12,36 @@
         function and is executed after another function execution has been finished.</span>
     <ul id="arrayId"></ul>
     <h2>Given a string, reverse each word in the given paragraph?</h2>
+    <h2 id="reverseId"></h2>
     <script>
 
         // CallBack function
         function modifyArray(arr, callBack) {
-            const modifyNumber =  arr.push(100);
+            const modifyNumber = arr.push(100);
             document.getElementById("arrayId").innerHTML = modifyNumber
             callBack();
         }
 
         var arr = [1, 2, 3, 4, 5]
 
-         modifyArray(arr, function () {
+        modifyArray(arr, function () {
             console.log("Array has been modify", arr)
-            
             return arr;
         })
-        
-        // Reverse the given string with paragraph
-        var string = "Welcome to the JavaScript Code";
-        var reverseEntireSentence = reverseBySeparator(string, "")
-        console.log(reverseEntireSentence);
 
+
+        // Reverse the given string with paragraph
+        var paragraph = "Given a string reverse each word in the given paragraph?";
+        console.log(paragraph.split(" "));
+        document.getElementById("reverseId").innerHTML = paragraph.split(" ").reverse(" ").join(" ");
+
+        // Find the even or odd number in the given strings
+        var allNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+        console.log("All number: ", allNumber);
+        var filterNumberEven = allNumber.filter(num => num % 2 === 0);
+        var filterNumberOdd = allNumber.filter(num => num % 2 !== 0);
+        console.log("even: ", filterNumberEven);
+        console.log("odd: ", filterNumberOdd);
     </script>
 </body>
 
