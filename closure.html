@@ -21,40 +21,40 @@
 <script>
 
     // Closer basic example..!
-    function MainFunction() {
-        const name = "Chris Hemsworth";
-        // document.getElementById("closureId").innerHTML = name;
-        // console.log(name)
+    // function MainFunction() {
+    //     const name = "Chris Hemsworth";
+    //     // document.getElementById("closureId").innerHTML = name;
+    //     // console.log(name)
 
-        function InnerFunction() {
-            // return name;
-            myName = name;
-            console.log(myName)
-            document.getElementById("closureId").innerHTML = myName;
-        }
-        InnerFunction()
-    }
-    MainFunction();
+    //     function InnerFunction() {
+    //         // return name;
+    //         myName = name;
+    //         console.log(myName)
+    //         document.getElementById("closureId").innerHTML = myName;
+    //     }
+    //     InnerFunction()
+    // }
+    // MainFunction();
 
     // Closure basic to advance example..!
-    if (Math.random() > .5) {
-        x = 1;
-        console.log("First iteration: " + x)
-    } else {
-        x = 2
-        console.log("Second iteration: " + x)
-    }
+    // if (Math.random() > .5) {
+    //     x = 1;
+    //     console.log("First iteration: " + x)
+    // } else {
+    //     x = 2
+    //     console.log("Second iteration: " + x)
+    // }
 
     // Closure advance example.......!!
-    function makeFunc() {
-        const name = 'John Duo';
-        function displayName() {
-            console.log(name);
-        }
-        return displayName;
-    }
-    const myFunc = makeFunc();
-    myFunc()
+    // function makeFunc() {
+    //     const name = 'John Duo';
+    //     function displayName() {
+    //         console.log(name);
+    //     }
+    //     return displayName;
+    // }
+    // const myFunc = makeFunc();
+    // myFunc()
 
     // Closure advance example...!!
     const interviewQuestion = (name) => {
@@ -62,10 +62,10 @@
             if (name === "Kuldeep") {
                 console.log(`Hi, ${name}, Please describe what is the ${topic}?`)
             }
-            if (name === "John") {
+            else if (name === "John") {
                 console.log(`Hi, ${name}, Please describe what is the ${topic}?`)
             }
-            if (name === "Chris Hemsworth") {
+            else if (name === "Chris Hemsworth") {
                 console.log(`Hi, ${name}, Please describe what is the ${topic}?`)
             }
             else {
@@ -73,7 +73,13 @@
             }
         }
     }
-    interviewQuestion("Kuldeep", "JavaScript")
+
+    // const candidate = interviewQuestion("Kuldeep");
+    // candidate('UI');
+    interviewQuestion("Kuldeep")("UI");
+    interviewQuestion("John")("ReactJs");
+    interviewQuestion("Chris Hemsworth")("NodeJs");
+
 </script>
 
 
