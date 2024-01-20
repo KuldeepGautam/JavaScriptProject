@@ -21,20 +21,19 @@
 <script>
 
     // Closer basic example..!
-    // function MainFunction() {
-    //     const name = "Chris Hemsworth";
-    //     // document.getElementById("closureId").innerHTML = name;
-    //     // console.log(name)
+    var name = "Chris Hemsworth";
+    function MainFunction() {
+        const Kuldeep = "Kuldeep Gautam";
+        console.log(name)
 
-    //     function InnerFunction() {
-    //         // return name;
-    //         myName = name;
-    //         console.log(myName)
-    //         document.getElementById("closureId").innerHTML = myName;
-    //     }
-    //     InnerFunction()
-    // }
-    // MainFunction();
+        function InnerFunction() {
+            myName = name;
+            console.log(myName)
+        }
+        InnerFunction()
+        console.log(Kuldeep)
+    }
+    MainFunction();
 
     // Closure basic to advance example..!
     // if (Math.random() > .5) {
@@ -57,28 +56,28 @@
     // myFunc()
 
     // Closure advance example...!!
-    const interviewQuestion = (name) => {
-        return function (topic) {
-            if (name === "Kuldeep") {
-                console.log(`Hi, ${name}, Please describe what is the ${topic}?`)
-            }
-            else if (name === "John") {
-                console.log(`Hi, ${name}, Please describe what is the ${topic}?`)
-            }
-            else if (name === "Chris Hemsworth") {
-                console.log(`Hi, ${name}, Please describe what is the ${topic}?`)
-            }
-            else {
-                console.log("Welcome to the my Company................!")
-            }
-        }
-    }
+    // const interviewQuestion = (name) => {
+    //     return function (topic) {
+    //         if (name === "Kuldeep") {
+    //             console.log(`Hi, ${name}, Please describe what is the ${topic}?`)
+    //         }
+    //         else if (name === "John") {
+    //             console.log(`Hi, ${name}, Please describe what is the ${topic}?`)
+    //         }
+    //         else if (name === "Chris Hemsworth") {
+    //             console.log(`Hi, ${name}, Please describe what is the ${topic}?`)
+    //         }
+    //         else {
+    //             console.log("Welcome to the my Company................!")
+    //         }
+    //     }
+    // }
 
     // const candidate = interviewQuestion("Kuldeep");
     // candidate('UI');
-    interviewQuestion("Kuldeep")("UI");
-    interviewQuestion("John")("ReactJs");
-    interviewQuestion("Chris Hemsworth")("NodeJs");
+    // interviewQuestion("Kuldeep")("UI");
+    // interviewQuestion("John")("ReactJs");
+    // interviewQuestion("Chris Hemsworth")("NodeJs");
 
 </script>
 
